@@ -1,0 +1,72 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn vite",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "chrono-log",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "clipboard": {
+        "all": true,
+        "readText": true,
+        "writeText": true
+      },
+      "notification": {
+        "all": true
+      }
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "main",
+        "width": 350,
+        "height": 600,
+        "visible": false,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay",
+        "alwaysOnTop": true,
+        "closable": false,
+        "minimizable": false,
+        "decorations": false,
+        "focus": false,
+        "transparent": true,
+        "fileDropEnabled": false
+      }
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.chrono.log.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "windows": {
+        "webviewInstallMode": {
+          "type": "offlineInstaller"
+        }
+      }
+    }
+  }
+}
